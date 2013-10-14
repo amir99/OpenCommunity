@@ -71,7 +71,7 @@ UPLOAD_PATH = ABSDIR('uploads')
 
 UPLOAD_ALLOWED_EXTS = [
                        'pdf', 'txt', 'doc', 'docx', 'xls', 'xlsx', 'csv',
-                      'jpg', 'jpeg', 'gif', 'png'
+                       'jpg', 'jpeg', 'gif', 'png', 'ppt', 'pptx', 'rtf',
                       ]
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
