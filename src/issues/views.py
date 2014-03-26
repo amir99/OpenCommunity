@@ -807,7 +807,7 @@ class AssignmentsView(ProposalMixin, ListView):
 
     def get_queryset(self):
         term = self.request.GET.get('q', '').strip()
-        sqs = SearchQuerySet().filter(
+        sqs = SearchQuerySet().models(Proposal).filter(
             active=True, community=self.community.id,
             status=Proposal.statuses.ACCEPTED,
             type=ProposalType.TASK).order_by(self._get_order())
@@ -882,4 +882,3 @@ class ProceduresView(ProposalMixin, ListView):
         d['active_tag'] = tag_query
         d['tags_as_links'] = (not search_query and d['is_paginated']) or len(d['object_list']) == 0
         return d
-
